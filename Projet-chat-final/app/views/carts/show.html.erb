@@ -1,0 +1,43 @@
+<!-- <ul> <''% @cart.line_items.each do |item|%> <''%if(item.current_user_id == current_user.id)%> <li><''%= item.product.title %> (x<''%=item.quantity%>)</li> <''%end%> <''%end%> <''%=current_user.id%> </ul> -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body{
+        margin:0;
+        padding:0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <ul class="list-group">
+      <button type="button" class="list-group-item list-group-item-action active">
+        <h4>Mon Panier de saka</h4>
+      </button>
+      <% @cart.line_items.each do |item|%>
+        <% @c_user = item.current_user_id%>
+          <%if(item.current_user_id == current_user.id)%>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <%= item.product.title %>
+              (x<%=item.quantity%>)
+              <span class="badge badge-primary badge-pill"><%= number_to_currency(item.total, unit: "MGA ", separator: ",", format: "%u%n")%></span>
+            </li>
+          <%end%>
+        <%end%>
+        <% if (@c_user == current_user.id)%>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <b>Total :</b>
+            <span class="badge badge-primary badge-pill"><%= number_to_currency(@cart.total, unit: "MGA ", separator: ",", format: "%u%n")%></span>
+          </li>
+        <%end%>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= link_to 'Miverina Hividy saka', root_path, class: "btn btn-primary btn-sm" %><br><br>
+          <%= button_to 'Vider le panier', @cart, method: :delete, data: { confirm: "Tena alana ao anaty sobika le saka.?"}, class: "btn btn-danger btn-sm" %><br><br>
+          <%= button_to 'Check Out', {:controller => "carts", :action => "create",:cart_id => session[:cart_id], :total_price => @cart.total, :user_id=> current_user.id,}, :method=>:post, class: "btn btn-danger btn-sm" %>
+        </li>
+      </ul>
+    </body>
+  </html>

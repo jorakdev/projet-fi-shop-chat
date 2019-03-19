@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+			body{
+				background-color:#222F3E;
+			}
+			p{
+				color:white;
+				font-size:40px;
+			}
+			td, th, h1{
+				color:white;
+        padding-left:15px;
+			}
+
+      h1{
+        padding-left:50px;
+      }
+		</style>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'bootstrap' %>
+  </head>
+  <body>
+    <h1>Products</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Image url</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.title %></td>
+            <td><%= truncate strip_tags(product.description), length: 130 %></td>
+            <td><%= product.price %></td>
+            <td><%= product.image_url %></td>
+            <td><%= link_to 'Show', product, class:"btn btn-primary", width:"10px"%></td>
+            <td><%= link_to 'Edit', edit_product_path(product), class:"btn btn-success", width:"10px" %></td>
+            <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger", width:"10px" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Product', new_product_path, class:"btn btn-primary" %>
+
+  </body>
+</html>
+<p id="notice"><%= notice %></p>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<%= csrf_meta_tags %>
+	<%= csp_meta_tag %>
+
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_pack_tag 'application' %>
+	<%= stylesheet_pack_tag 'bootstrap' %>
+
+	<style >
+		body{
+			background-color:#34495E;
+		}
+		p{
+			color:white;
+		}
+		img{
+			box-shadow:0px 5px 1px 3px black;
+
+		}
+		h2{
+			color:black;
+		}
+		h5{
+			color:cyan;
+		}
+	</style>
+
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="#">Sayna<span style="color:#d35400 ; padding:60px 0px"><b>SAKA</b></span></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home
+							<span class="sr-only">(current)</span></a>
+					</li>
+				</ul>
+				<form class="form-inline mt-2 mt-md-0">
+					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+		</nav>
+	</header>
+
+	<!--  -->
+	<!-- Section: Team v.1 -->
+<section class="team-section text-center my-5">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">Our amazing team</h2>
+  <!-- Section description -->
+  <p class="grey-text w-responsive mx-auto mb-5">Izahay dia mpivarotra saka belouha</p>
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+      <div class="avatar mx-auto">
+        <img src="/img/p1.jpeg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">Jo</h5>
+      <p class="text-uppercase blue-text"><strong>#sayna@4</strong></p>
+      <p class="grey-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem ipsa accusantium
+        doloremque rem laudantium totam aperiam.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Twitter -->
+        <a class="p-2 fa-lg tw-ic">
+          <i class="fab fa-twitter blue-text"> </i>
+        </a>
+        <!-- Instagram -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-instagram blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+      <div class="avatar mx-auto">
+        <img src="/img/p2.jpeg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">Jean</h5>
+      <p class="text-uppercase blue-text"><strong>#sayna@4</strong></p>
+      <p class="grey-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem ipsa accusantium
+        doloremque rem laudantium totam aperiam.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Instagram -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-instagram blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+      <div class="avatar mx-auto">
+        <img src="/img/p3.jpeg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">Rasit</h5>
+      <p class="text-uppercase blue-text"><strong>#sayna@4</strong></p>
+      <p class="grey-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim est fugiat nulla id eu laborum.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Instagram -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-instagram blue-text"> </i>
+        </a>
+        <!-- Dribbble -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-dribbble blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6">
+      <div class="avatar mx-auto">
+        <img src="/img/p4.jpeg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">Mirindra</h5>
+      <p class="text-uppercase blue-text"><strong>#sayna@4</strong></p>
+      <p class="grey-text">Perspiciatis repellendus ad odit consequuntur, eveniet earum nisi qui consectetur
+        totam officia voluptates perferendis voluptatibus aut.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Github -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-github blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Team v.1 -->
+	<!--  -->
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "vita",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^4.0.2",
+    "bootstrap": "4.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.2.1"
+  }
+}

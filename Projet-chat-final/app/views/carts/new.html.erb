@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style >
+      body{
+        margin:0;
+        padding:0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <%= form_tag carts_path do %>
+    <div class="card text-center">
+      <div class="card-header">
+        Sayna SAKA Payment
+      </div>
+      <div class="card-body">
+        <%@in_checkout.each do |checkout|%>
+          <% if(checkout.user_id == current_user.id) %>
+            <% @totaux = checkout.total_price %><%end%>
+          <%end%>
+          <h5 class="card-title"><%=current_user.prenom%>
+            vous devez payer :
+          </h5>
+          <p class="card-text">
+            <b><%=@totaux%></b>
+            MGA</p>
+        <%end%>
+        <a>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-description="CHAT" data-amount="<%=@totaux%>" data-currency="MGA" data-locale="auto"></script>
+        </a>
+      </div>
+      <div class="card-footer text-muted">
+        Mandoa Vola
+      </div>
+    </div>
+  </body>
+</html>

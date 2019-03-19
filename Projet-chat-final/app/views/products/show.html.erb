@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+
+  <style media="screen">
+    body{
+      background-color:#222F3E;
+    }
+    p{
+      color:white;
+      font-size:20px;
+    }
+    td, th, h1{
+      color:white;
+      padding-left:15px;
+    }
+
+    a {
+      color:cyan;
+    }
+
+
+  </style>
+
+
+
+  <body>
+
+
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @product.title %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @product.description %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @product.price %>
+    </p>
+
+    <p>
+      <strong>Image url:</strong>
+      <%= @product.image_url %>
+    </p>
+
+    <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-success" %> |
+    <%= link_to 'Back', products_path , class:"btn btn-secondary" %>
+
+
+  </body>
+</html>
